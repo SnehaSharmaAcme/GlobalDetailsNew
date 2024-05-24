@@ -1,0 +1,7 @@
+{% if settings.popuplogo != blank %}
+  <div class="popup--animation-wrap" id="popup" style="display:none;">
+    <div class="animation--image">
+      {{ settings.popuplogo | image_url: width: 500 | image_tag: loading: 'lazy', class: 'popup_icon' }}
+    </div>
+  </div>
+{% endif %}

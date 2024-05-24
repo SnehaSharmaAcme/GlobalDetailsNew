@@ -1,0 +1,32 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-login",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "170910133567ddd21c": {
+      "type": "apps",
+      "blocks": {
+        "simply_otp_login_app_section_block_7LrpVq": {
+          "type": "shopify:\/\/apps\/simply-otp-login\/blocks\/app-section-block\/c26b7b17-273d-4800-af62-8ec88ba18251",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "simply_otp_login_app_section_block_7LrpVq"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "170910133567ddd21c"
+  ]
+}

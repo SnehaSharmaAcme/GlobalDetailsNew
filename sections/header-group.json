@@ -1,0 +1,89 @@
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_ggNNJy": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store",
+            "text_alignment": "center",
+            "color_scheme": "accent-1",
+            "link": ""
+          }
+        },
+        "announcement-bar-0": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "Welcome To Our store",
+            "text_alignment": "center",
+            "color_scheme": "background-1",
+            "link": ""
+          }
+        },
+        "announcement_zCQrGX": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "COD Available",
+            "text_alignment": "center",
+            "color_scheme": "accent-2",
+            "link": ""
+          }
+        },
+        "announcement_rnjtGk": {
+          "type": "announcement",
+          "settings": {
+            "text": "10 Days Facile Return & Exchange",
+            "text_alignment": "center",
+            "color_scheme": "accent-2",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_ggNNJy",
+        "announcement-bar-0",
+        "announcement_zCQrGX",
+        "announcement_rnjtGk"
+      ],
+      "settings": {
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_position": "middle-left",
+        "menu": "new-main-menu",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "always",
+        "show_line_separator": true,
+        "color_scheme": "background-1",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 4,
+        "padding_bottom": 4
+      }
+    },
+    "ebf0563e-a5dc-4f87-82f4-a021adf32598": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "<div class=\"page-width message-banner-content\">\n<h2>Zvezda Shop<\/h2>\n<ul class=\"menu-class\">\n<li><a href=\"#\">Shop Men’s<\/a><\/li>\n<\/ul>\n<\/div>",
+        "color_scheme": "accent-1",
+        "padding_top": 8,
+        "padding_bottom": 8
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header",
+    "ebf0563e-a5dc-4f87-82f4-a021adf32598"
+  ]
+}

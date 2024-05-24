@@ -1,0 +1,87 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "disabled": true,
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 3,
+        "image_ratio": "adapt",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "97a2e2a8-419a-4f84-a528-55da0d7f42f7": {
+      "type": "image-banner",
+      "blocks": {
+        "template--19641925599506__97a2e2a8-419a-4f84-a528-55da0d7f42f7-1688110094f507c04d-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Coming Soon",
+            "heading_size": "h0"
+          }
+        },
+        "template--19641925599506__97a2e2a8-419a-4f84-a528-55da0d7f42f7-1688110094f507c04d-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        },
+        "template--19641925599506__97a2e2a8-419a-4f84-a528-55da0d7f42f7-1688110094f507c04d-2": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--19641925599506__97a2e2a8-419a-4f84-a528-55da0d7f42f7-1688110094f507c04d-0",
+        "template--19641925599506__97a2e2a8-419a-4f84-a528-55da0d7f42f7-1688110094f507c04d-1",
+        "template--19641925599506__97a2e2a8-419a-4f84-a528-55da0d7f42f7-1688110094f507c04d-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/A-JUN-WK-5-D-NA.png",
+        "image_overlay_opacity": 40,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "accent-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid",
+    "97a2e2a8-419a-4f84-a528-55da0d7f42f7"
+  ]
+}

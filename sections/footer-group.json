@@ -1,0 +1,51 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "0bde3604-abb4-4546-aae9-50a5fa642111": {
+          "type": "link_list",
+          "settings": {
+            "heading": "CUSTOMER SERVICE",
+            "menu": "footer"
+          }
+        },
+        "282afae5-41fb-4d27-a824-4c804bbe1bbd": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Company",
+            "menu": "company"
+          }
+        }
+      },
+      "block_order": [
+        "0bde3604-abb4-4546-aae9-50a5fa642111",
+        "282afae5-41fb-4d27-a824-4c804bbe1bbd"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "newsletter_enable": true,
+        "newsletter_heading": "Subscribe to our emails",
+        "returnsvg": "shopify:\/\/shop_images\/delivery-status.png",
+        "returntext": "10 Days return policy",
+        "deliverytext": "",
+        "paymentsvg": "shopify:\/\/shop_images\/secure-payments-image.webp",
+        "paymenttext": "100% Secure Payment",
+        "enable_follow_on_shop": true,
+        "show_social": true,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "show_policy": false,
+        "margin_top": 36,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

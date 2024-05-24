@@ -1,0 +1,87 @@
+{% if product.metafields.custom.size_chart != blank %}
+<div class="modal" id="size_chart" style="display: none">
+  <div class="modal-content">
+    <span class="modal-close">{% render 'icon-close-small' %}</span>
+    <div class="modal--content--inner">
+      <div>{{ product.metafields.custom.size_chart.value.content }}</div>
+      
+    </div>
+  </div>
+</div>
+
+<style media="screen">
+  .mainTabsWrapper { 
+    /* display:none;  */
+                    text-align: center; width: 100%; margin: 50px 0 30px; }
+  .mainTabsWrapper label { display: inline-block; cursor: pointer; font-weight: bold; margin: 0 10px; padding-bottom: 4px; text-transform: uppercase; }
+  .innerTabWrapper { text-align: center; }
+
+
+  .bsg_table tr:first-child { color: #161616; background: #f7f7f7; text-transform: capitalize; }
+  .bsg_landscape tr td:first-child { text-align: left; }
+  .bsg_landscape td { min-width: 80px; }
+  .bsg_table td { font-size: 12px; padding: 10px 5px; text-align: center; width: 20%; line-height: 14px; vertical-align: middle;}
+  .sizeChartToggleInput input { display : none; }
+  .sizeGuideContent,.fitGuideContent,.inchGuideContent,.cmsGuideContent,.measurementGuideContent, .garmentGuideContent,
+  .inchGuideContent_g, .cmsGuideContent_g {
+    display : none;
+  }
+  .tab-wrap {
+    display: flex;}
+    .activeSizeTab.active { border-bottom: 2px solid #42a2a2; }
+  #sizeGuideLabel:checked~.mainTabsWrapper .activeSizeTab { border-bottom: 2px solid #42a2a2; }
+  #fitGuideLabel:checked~.mainTabsWrapper .activeFitTab { border-bottom: 2px solid #42a2a2; }
+
+  #sizeGuideLabel:checked~.sizeGuideContent,
+  #sizeGuideLabel:checked~.mainTabsWrapper,
+  #fitGuideLabel:checked~.fitGuideContent,
+  #fitGuideLabel:checked~.mainTabsWrapper,
+  #garmentDetailLabel:checked~.garmentGuideContent,
+  #inchGuideLabel:checked~.inchGuideContent,
+  #cmsGuideLabel:checked~.cmsGuideContent,
+  #howToMeasureLabel:checked~.measurementGuideContent,
+  #inchGuideLabel_g:checked~.inchGuideContent_g,
+  #cmsGuideLabel_g:checked~.cmsGuideContent_g{
+    display : block;
+  }
+
+  .sizeMeasurementImg { display: block; margin: 0 auto; width: 50%; }
+  .innerTabWrapper { display: table; width: 135px; margin: 16px auto 10px; border: 0.8px solid #979797; }
+  .innerTabWrapper label { width: 50%; display: table-cell; color: #000; font-size: 11px; font-weight: bold; padding: 5px; border-radius: 1.7px; }
+
+  #inchGuideLabel:checked~.innerTabWrapper .activeInchTab { background-color: #000; color: #fff; }
+  #cmsGuideLabel:checked~.innerTabWrapper .activeCmsTab { background-color: #000; color: #fff; }
+
+  .garmentGuideContent #inchGuideLabel_g:checked~.innerTabWrapper .activeInchTab_g { background-color: #000; color: #fff; }
+  .garmentGuideContent #cmsGuideLabel_g:checked~.innerTabWrapper .activeCmsTab_g { background-color: #000; color: #fff; }
+
+  .guideNote { font-size: 12px; text-align: center; margin-bottom: 15px; }
+
+  .bsg_link { font-weight: normal; font-size: 13px; color: #42a2a2; display: block; cursor: pointer; margin: 15px 0; text-align: center; }
+
+  .sizeGuideImage { width: 100%; max-width: 225px; margin: 0 auto; padding: 20px 0; }
+  .sizeGuideImage img { width: 100%; display: block; }
+  .bsg_selected { display: none; }
+  .bsg_selection .bsg_selected { display: block; background-color: initial; }
+  .sizeGuideImage p { height: 80px; }
+
+  .bsg_selection .sizeGuideImage p { height: auto; }
+  .bsg_selection .sizeGuideImage { padding-top: 0; padding-bottom: 0; }
+  .guide_text { font-size: 12px; text-align: center; }
+  .bsg_dark { float: left; margin-top: 10px; width: 100%; color: #444; font-weight: bold; text-align: center; }
+  .bsg_thumbs {
+      float: left;
+      width: 50%;
+      text-align: center;
+      outline: 1px solid #eee;
+    }
+  .bsg_selection .bsg_thumbs { width: 80%; margin: 0 auto; float: none; outline: none; }
+  .bsg_back { position: absolute; left: 0; top: 0; color: #aaa; cursor: pointer; width: 11px; opacity: 0.4; margin: 15px; }
+  .garmentHeading { margin: 35px 0 15px; color: #444; font-size: 18px; text-align: center; }
+  .bottomPadding { padding: 0 15px 10px; }
+  .measurementGuideContent_inner { padding: 0 15px 10px; }
+  .measurementGuideContent_inner img { width: 100%; display: block; }
+  .measurementGuideContent_inner h3 { margin-top: 10px; }
+  .bsg_flex img { width: 50%; display: block; margin: 0 auto; }
+</style>
+{% endif %}

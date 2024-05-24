@@ -1,0 +1,34 @@
+{% if settings.est_xlsx != blank %}
+  <div class="pdp_estimate--delivery">
+    <div class="pdp_estimate--main">
+      <div class="delivery_header">
+        {% if block.settings.title != blank %}
+          <div class="delivery_heading">
+            {{ block.settings.title }}
+          </div>
+        {% endif %}
+        {% if block.settings.subtitle != blank %}
+          <div class="delivery_subheading">
+            {{ block.settings.subtitle }}
+          </div>
+        {% endif %}
+      </div>
+      <div class="estimate--delivery_main_wrap">
+        <div class="pincode_checker_message __success"></div>
+        <div class="estimate--delivery_succcess" style="display:none">
+          <div class="after_success">{{ settings.after_success | replace: '#CODE#','<zipcode></zipcode>' }}</div>
+          <button type="button" class="pin_change">change</button>
+        </div>
+        <div class="estimate--delivery_wrap">
+          <input type="text" class="pincode_value" placeholder="Enter Pincode">
+          <button type="button" class="pin_check">check</button>
+        </div>
+        <div class="pincode_checker_message __error"></div>
+      </div>
+      <div class="cash-ondel" style="display: none;">
+        <img src="https://cdn.shopify.com/s/files/1/0743/5508/1490/files/money.webp?v=1709534758" width="26px" height="16px" alt="cash on delivery">
+        <strong>Cash on Delivery available</strong>
+      </div>
+    </div>
+  </div>
+{% endif %}

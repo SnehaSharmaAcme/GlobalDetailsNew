@@ -3167,3 +3167,9 @@ span, strong, a, label, input, select, textarea, legend, li {
   /* font-family: 'Montserrat', sans-serif; */
   font-family: 'Good Times Rg';
 }
+
+.product-options-wrap .variant_image--main{
+     background-size: 100% !important;
+     object-fit: contain;
+     background-repeat: no-repeat !important;
+}

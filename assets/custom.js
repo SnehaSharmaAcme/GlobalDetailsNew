@@ -43,15 +43,18 @@ $(document).ready(function () {
       $(".video-section." + $el + " video")[0].play();
     }
   });
-  product_slick_slider();
-  var color_swatch = $("input[name='Color']:checked").val();
-  color_swatch = color_swatch.toLowerCase();
-  var color_swatch_rplace = color_swatch.replace(" ", "-");
-  $(".product-slider-for, .product-slider-nav").slick("slickUnfilter");
-  $(".product-slider-for, .product-slider-nav").slick(
-    "slickFilter",
-    "." + color_swatch_rplace
-  );
+  setTimeout(function() {
+     product_slick_slider();
+  },1100)
+ 
+  // var color_swatch = $("input[name='Color']:checked").val();
+  // color_swatch = color_swatch.toLowerCase();
+  // var color_swatch_rplace = color_swatch.replace(" ", "-");
+  // $(".product-slider-for, .product-slider-nav").slick("slickUnfilter");
+  // $(".product-slider-for, .product-slider-nav").slick(
+  //   "slickFilter",
+  //   "." + color_swatch_rplace
+  // );
   $(".sw_color").hover(function () {
     $(".sw_color").removeClass("active");
     $(this).addClass("active");
@@ -71,9 +74,7 @@ $(document).ready(function () {
     $(this).closest(".color_swatches").find(".color_name").html(color_name);
     console.log(color_name);
   });
-  // setTimeout(function(){
-  //     $('.shopify-payment-button').detach().insertBefore('.product-form');
-  //     },1200);
+
 });
 $(document).on(
   "click",
@@ -108,36 +109,52 @@ $(document).on(
     return false;
   }
 );
-$(document).on("change", "input[name='Color']", function () {
-  //$('input[name="Color"]').change(function(){
-  let variant = $(this).val();
-  variant = variant.toLowerCase();
-  var variant_rplace = variant.replace(" ", "-");
-  console.log(variant_rplace);
-  $(".color_name").removeClass("active");
-  $(".color_name[data-color='" + variant_rplace + "']").addClass("active");
-  $(".product-slider-for").slick("slickGoTo", 0);
-  setTimeout(function () {
-    $(".thumbnail-list__item").each(function (index) {
-      $(this).attr("data-slick-index", index);
-      console.log(index);
-    });
-  }, 1000);
-  setTimeout(function () {
-    $(".product-slider-for, .product-slider-nav").slick("slickUnfilter");
-    $(".product-slider-for, .product-slider-nav").slick(
-      "slickFilter",
-      "." + variant_rplace
-    );
-  }, 100);
-});
+
+  $(document).on("change", "input[name='Color']", function () {
+    let variant = $(this).val();
+    variant = variant.toLowerCase();
+    var variant_rplace = variant.replace(/\s+/g, "-"); 
+    console.log(variant_rplace);
+    $(".color_name").removeClass("active");
+    $(".color_name[data-color='" + variant_rplace + "']").addClass("active");
+
+    // Reset slider position and update data-slick-index
+    setTimeout(function () {
+      $(".product-slider-for").slick("slickGoTo", 0);
+      $(".thumbnail-list__item").each(function (index) {
+        $(this).attr("data-slick-index", index);
+        console.log(index);
+      });
+    }, 1000);
+
+    setTimeout(function () {
+      var $sliderFor = $(".product-slider-for");
+      var $sliderNav = $(".product-slider-nav");
+      console.log(variant_rplace, '<<<variant_rplace>>>>>')
+      if ($sliderFor.hasClass('slick-initialized') && $sliderNav.hasClass('slick-initialized')) {
+        $sliderFor.slick("slickUnfilter");
+        $sliderNav.slick("slickUnfilter");
+console.log($('.'+variant_rplace), '<<<<>><><><><><><>')
+try {
+    $sliderFor.slick("slickFilter", "." + variant_rplace);
+    $sliderNav.slick("slickFilter", "." + variant_rplace);
+} catch (error) {
+    console.error('Error applying filter:', error);
+}
+      } else {
+        console.error("Slick sliders are not properly initialized.");
+      }
+    }, 200);
+  });
+
 
 $(document).on("click", ".thumbnail-list__item", function (e) {
   e.preventDefault();
-  var slideno = $(this).parents(".slick-slide").attr("data-slick-index");
+  var slideno = $(this).attr("data-slick-index");
   console.log(slideno);
   $(".product-slider-for").slick("slickGoTo", slideno);
 });
+
 function product_slick_slider() {
   $(".product-slider-for").slick({
     slidesToShow: 1,

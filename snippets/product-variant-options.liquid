@@ -14,6 +14,8 @@
     block: block
   %}
 {% endcomment %}
+
+
 {%- liquid
   assign variants_available_arr = product.variants | map: 'available'
   assign variants_option1_arr = product.variants | map: 'option1'
@@ -60,7 +62,8 @@
         class="disabled"
       {% endif %}
     >
-    <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" {% if option.name == 'Color' %} style="background-color: {{ value | split: ' ' | last | handle }}; background-image: url({{ value | handle | append: '.' | append: file_extension | asset_url }})" {% endif %}>
+     {% assign variant_image2 = product.variants | where: 'option2', value | first %}
+    <label {% if variant_image2 != blank %}class="variant_image--main"{% endif %} for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" {% if option.name == 'Color' %} style="background-color: {{ value | split: ' ' | last | handle }}; background-image: url({% if variant_image2 %}{{ variant_image2 | img_url:'original' }}{% else %}{{ value | handle | append: '.' | append: file_extension | file_url }}{% endif %})" {% endif %}>
       {% unless option.name == 'Color' %} {{ value -}} {% endunless %}
       <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
     </label>

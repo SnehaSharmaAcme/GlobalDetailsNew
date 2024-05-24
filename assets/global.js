@@ -838,6 +838,7 @@ class VariantSelects extends HTMLElement {
       return !variant.options.map((option, index) => {
         return this.options[index] === option;
       }).includes(false);
+      
     });
   }
 
@@ -852,6 +853,7 @@ class VariantSelects extends HTMLElement {
     if (!modalContent) return;
     const newMediaModal = modalContent.querySelector( `[data-media-id="${this.currentVariant.featured_media.id}"]`);
     modalContent.prepend(newMediaModal);
+    // console.log(this.currentVariant,'kdjghfdjkgh')
   }
 
   updateURL() {
